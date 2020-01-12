@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+body {font-family: Arial;
+background-color: lightgrey;}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  width: 50%;
+}
+
+.tab button:hover {
+  background-color: #ddd;
+}
+
+.tab button.active {
+  background-color:red;
+  color: white;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+</style>
+</head>
+<body>
+
+<div style="text-align: center; text-color: white;"> <h1>SpamClogger Link List</h1></div>
+    <div class="w3-container">
+  <table class="w3-table-all">
+    <thead>
+      <tr class="w3-red">
+        <th>URL</th>
+        <th>Email Entered</th>
+        <th>Password Entered</th>
+      </tr>
+    </thead>
+        {% for potential in potentials %}
+    <tr>
+      <td>{{ potential.url }}</td>
+      <td>{{ potential.email }}</td>
+      <td>{{ potential.password }}</td>
+    </tr>
+      {% endfor %}
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>
